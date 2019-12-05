@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RangeDetector : MonoBehaviour
 {
+    public GameObject sound_laser;
     TowerController tcRoot;
     float timeNextBullet;
     Transform target;
@@ -27,6 +28,7 @@ public class RangeDetector : MonoBehaviour
                 tcRoot.towerHead.transform.LookAt(new Vector3(target.transform.position.x, obj.transform.position.y, target.transform.position.z));
                 if(Time.time > timeNextBullet){
                     Instantiate(tcRoot.bulletReference, tcRoot.bulletSpawn.position, tcRoot.bulletSpawn.rotation);
+                    Instantiate(sound_laser);
                     timeNextBullet = Time.time + tcRoot.fireRate;
                 }
             break;

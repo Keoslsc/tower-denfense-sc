@@ -13,15 +13,14 @@ public class MenuTowerCreate : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)){
-            menuTower.SetActive(true);
-            menuTower.transform.GetChild(0).transform.GetComponent<MenuTowerCreateController>().emptyTower = emptyTower;
-        }
+        
         
     }
 
     void OnMouseDown(){
-        // Quiero ejecutar el menu y la clonacion de torre en este metodo.
-        Debug.Log("HOLA");
+        if(Input.GetMouseButtonDown(0)){
+            menuTower.SetActive(true);
+            menuTower.transform.GetChild(0).transform.GetComponent<MenuTowerCreateController>().emptyTower = emptyTower;
+        };
     }
 }
